@@ -28,6 +28,13 @@
     </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
   </_.fcp.AnimationOnByDefault.false...style>
   <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Rnage' datatype='real' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='1.0'>
+        <calculation class='tableau' formula='1.0' />
+        <range max='1.0' min='0.0' />
+      </column>
+    </datasource>
     <datasource caption='model' inline='true' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -321,14 +328,38 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column datatype='real' name='[CPU Clock (MHz)]' role='measure' type='quantitative' />
       <column caption='Company ID' datatype='real' name='[Company_ID]' role='dimension' type='ordinal' />
       <column caption='Company real' datatype='string' name='[Company_real]' role='dimension' type='nominal' />
+      <column datatype='real' name='[Depth (mm)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Display Diagonal (in)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Display Length(px)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Display Width(px)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Length (mm)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Mass (grams)]' role='measure' type='quantitative' />
       <column datatype='integer' name='[Model ID]' role='dimension' type='ordinal' />
       <column datatype='string' name='[Model]' role='dimension' type='nominal' />
+      <column datatype='real' name='[Pixel Density (per inch)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[RAM Capacity (Mb)]' role='measure' type='quantitative' />
       <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
+      <column datatype='real' name='[Storage (Mb)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Volume (cubic cm)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Width (mm)]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='model.csv' datatype='table' name='[__tableau_internal_object_id__].[model.csv_EC3671AB45414E84A40054273B277AB4]' role='measure' type='quantitative' />
       <column-instance column='[Company_real]' derivation='CountD' name='[ctd:Company_real:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Model]' derivation='CountD' name='[ctd:Model:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[CPU Clock (MHz)]' derivation='Median' name='[med:CPU Clock (MHz):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Depth (mm)]' derivation='Median' name='[med:Depth (mm):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Display Diagonal (in)]' derivation='Median' name='[med:Display Diagonal (in):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Display Length(px)]' derivation='Median' name='[med:Display Length(px):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Display Width(px)]' derivation='Median' name='[med:Display Width(px):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Length (mm)]' derivation='Median' name='[med:Length (mm):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Mass (grams)]' derivation='Median' name='[med:Mass (grams):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pixel Density (per inch)]' derivation='Median' name='[med:Pixel Density (per inch):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[RAM Capacity (Mb)]' derivation='Median' name='[med:RAM Capacity (Mb):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Storage (Mb)]' derivation='Median' name='[med:Storage (Mb):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Volume (cubic cm)]' derivation='Median' name='[med:Volume (cubic cm):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Width (mm)]' derivation='Median' name='[med:Width (mm):qk]' pivot='key' type='quantitative' />
       <column-instance column='[Company_real]' derivation='None' name='[none:Company_real:nk]' pivot='key' type='nominal' />
       <group caption='Action (Company real)' hidden='true' name='[Action (Company real)]' name-style='unqualified' user:auto-column='sheet_link'>
         <groupfilter function='crossjoin'>
@@ -339,11 +370,47 @@
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Mass (grams):qk]&quot;</bucket>
+            </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[ctd:Company_real:qk]&quot;</bucket>
             </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Diagonal (in):qk]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Volume (cubic cm):qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Pixel Density (per inch):qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Length(px):qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:CPU Clock (MHz):qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Width(px):qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Width (mm):qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:RAM Capacity (Mb):qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Length (mm):qk]&quot;</bucket>
+            </map>
             <map to='#f28e2b'>
               <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[ctd:Model:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Storage (Mb):qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Depth (mm):qk]&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[none:Company_real:nk]' type='palette'>
@@ -822,30 +889,149 @@
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
+    <datasource inline='true' name='Clipboard_20221021T120101' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20221021T120101' name='Clipboard_20221021T120101leaf'>
+            <connection class='textscan' directory='/var/folders/34/v16rh8rj48ddxlq5hfr8thb40000gn/T/tableau-temp/0qn2n2505wtf6j1flu3ev18so8d0' filename='Clipboard_20221021T120101.txt' temporary='yes' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='Clipboard_20221021T120101leaf' name='Clipboard_20221021T120101#txt' table='[Clipboard_20221021T120101#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=' '>
+            <column datatype='integer' name='Year' ordinal='0' />
+            <column datatype='string' name='of' ordinal='1' />
+            <column datatype='string' name='Release' ordinal='2' />
+            <column datatype='string' name='Date' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='Clipboard_20221021T120101leaf' name='Clipboard_20221021T120101#txt' table='[Clipboard_20221021T120101#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=' '>
+            <column datatype='integer' name='Year' ordinal='0' />
+            <column datatype='string' name='of' ordinal='1' />
+            <column datatype='string' name='Release' ordinal='2' />
+            <column datatype='string' name='Date' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20221021T120101#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot; &quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[Clipboard_20221021T120101#txt]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20221021T120101]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>of</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[of]</local-name>
+            <parent-name>[Clipboard_20221021T120101#txt]</parent-name>
+            <remote-alias>of</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20221021T120101]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Release</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Release]</local-name>
+            <parent-name>[Clipboard_20221021T120101#txt]</parent-name>
+            <remote-alias>Release</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20221021T120101]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Clipboard_20221021T120101#txt]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20221021T120101]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Clipboard_20221021T120101' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20221021T120101]' role='measure' type='quantitative' />
+      <column caption='Of' datatype='string' name='[of]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Clipboard_20221021T120101' id='Clipboard_20221021T120101'>
+            <properties context=''>
+              <relation connection='Clipboard_20221021T120101leaf' name='Clipboard_20221021T120101#txt' table='[Clipboard_20221021T120101#txt]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=' '>
+                  <column datatype='integer' name='Year' ordinal='0' />
+                  <column datatype='string' name='of' ordinal='1' />
+                  <column datatype='string' name='Release' ordinal='2' />
+                  <column datatype='string' name='Date' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
   </datasources>
-  <shared-views>
-    <shared-view name='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
-      <datasources>
-        <datasource caption='model' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' />
-      </datasources>
-      <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
-        <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
-        <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
-      </datasource-dependencies>
-      <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' included-values='in-range'>
-        <min>2001.9000000000001</min>
-        <max>2012.916667</max>
-        <target field='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' />
-      </filter>
-    </shared-view>
-  </shared-views>
   <actions>
     <action caption='Filter 1 (generated)' name='[Action1_ADC0CCB6F63E4622871610FD894A61B3]'>
       <activation auto-clear='true' type='on-select' />
-      <source dashboard='Company Analysis' type='sheet' worksheet='Companies shares' />
+      <source dashboard='Companies' type='sheet' worksheet='Companies shares' />
       <command command='tsc:tsl-filter'>
         <param name='special-fields' value='all' />
-        <param name='target' value='Company Analysis' />
+        <param name='target' value='Companies' />
+      </command>
+    </action>
+    <action caption='Highlight 1 (generated)' name='[Action2_422571B981E5425E9119BC1453B179B4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Models' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Company real' />
+        <param name='target' value='Models' />
       </command>
     </action>
   </actions>
@@ -869,9 +1055,13 @@
           <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Company real)]'>
             <groupfilter function='level-members' level='[Company_real]' user:ui-action-filter='[Action1_ADC0CCB6F63E4622871610FD894A61B3]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>1989.0</min>
+            <max>2012.916667</max>
+          </filter>
           <slices>
-            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Company real)]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -938,9 +1128,13 @@
               </groupfilter>
             </groupfilter>
           </filter>
+          <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>1989.0</min>
+            <max>2012.916667</max>
+          </filter>
           <slices>
-            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1008,10 +1202,14 @@
           <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]'>
             <groupfilter function='level-members' level='[none:Company_real:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>1989.0</min>
+            <max>2012.916667</max>
+          </filter>
           <slices>
-            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]</column>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Company real)]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1042,6 +1240,193 @@
       </table>
       <simple-id uuid='{6F76A277-6FD4-40DE-8528-2BD1E5790F2F}' />
     </worksheet>
+    <worksheet name='Model info'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='model' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' />
+          </datasources>
+          <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
+            <column datatype='real' name='[CPU Clock (MHz)]' role='measure' type='quantitative' />
+            <column caption='Company real' datatype='string' name='[Company_real]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Depth (mm)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Display Diagonal (in)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Display Length(px)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Display Width(px)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Length (mm)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Mass (grams)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Model]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Pixel Density (per inch)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[RAM Capacity (Mb)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
+            <column datatype='real' name='[Storage (Mb)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Volume (cubic cm)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Width (mm)]' role='measure' type='quantitative' />
+            <column-instance column='[CPU Clock (MHz)]' derivation='Median' name='[med:CPU Clock (MHz):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Depth (mm)]' derivation='Median' name='[med:Depth (mm):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Display Diagonal (in)]' derivation='Median' name='[med:Display Diagonal (in):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Display Length(px)]' derivation='Median' name='[med:Display Length(px):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Display Width(px)]' derivation='Median' name='[med:Display Width(px):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Length (mm)]' derivation='Median' name='[med:Length (mm):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Mass (grams)]' derivation='Median' name='[med:Mass (grams):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pixel Density (per inch)]' derivation='Median' name='[med:Pixel Density (per inch):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[RAM Capacity (Mb)]' derivation='Median' name='[med:RAM Capacity (Mb):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Storage (Mb)]' derivation='Median' name='[med:Storage (Mb):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Volume (cubic cm)]' derivation='Median' name='[med:Volume (cubic cm):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Width (mm)]' derivation='Median' name='[med:Width (mm):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Company_real]' derivation='None' name='[none:Company_real:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Model]' derivation='None' name='[none:Model:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:CPU Clock (MHz):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Depth (mm):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Diagonal (in):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Length(px):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Display Width(px):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Length (mm):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Mass (grams):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Pixel Density (per inch):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:RAM Capacity (Mb):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Storage (Mb):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Volume (cubic cm):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19rmigs1k5a89c1de4hj51ie8cqo].[med:Width (mm):qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <alphabetic-sort column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]' direction='ASC' />
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Model:nk]' filter-group='4'>
+            <groupfilter function='member' level='[none:Model:nk]' member='&quot;Airis NC05 / NC05A&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' included-values='in-range-or-null'>
+            <min>1989.0</min>
+            <max>2012.916667</max>
+          </filter>
+          <slices>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Model:nk]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' value='Company real'>
+              <formatted-text>
+                <run fontsize='8'>Company real</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Multiple Values]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Multiple Values]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]</rows>
+        <cols>([federated.19rmigs1k5a89c1de4hj51ie8cqo].[Multiple Values] + [federated.19rmigs1k5a89c1de4hj51ie8cqo].[Multiple Values])</cols>
+      </table>
+      <simple-id uuid='{550E2CDC-989A-47FC-A581-E774A203EA37}' />
+    </worksheet>
+    <worksheet name='Model release year'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='model' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' />
+          </datasources>
+          <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
+            <column datatype='string' name='[Model]' role='dimension' type='nominal' />
+            <column datatype='date' name='[Release Date]' role='dimension' type='ordinal' />
+            <column-instance column='[Model]' derivation='None' name='[none:Model:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Release Date]' derivation='Day-Trunc' name='[tdy:Release Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Model:nk]' filter-group='4'>
+            <groupfilter function='member' level='[none:Model:nk]' member='&quot;Airis NC05 / NC05A&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Model:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[tdy:Release Date:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontalignment='1'>Released year: &#10; </run>
+                <run fontalignment='1'><![CDATA[<[federated.19rmigs1k5a89c1de4hj51ie8cqo].[tdy:Release Date:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='left' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4AC968D6-F709-4F67-8FC6-34FB53729AD1}' />
+    </worksheet>
     <worksheet name='Top 10 company release model'>
       <table>
         <view>
@@ -1057,6 +1442,10 @@
             <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <computed-sort column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' direction='DESC' using='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[ctd:Model:qk]' />
+          <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>1989.0</min>
+            <max>2012.916667</max>
+          </filter>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
           </slices>
@@ -1085,7 +1474,7 @@
     </worksheet>
   </worksheets>
   <dashboards>
-    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Company Analysis'>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Companies'>
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
       <datasources>
@@ -1117,7 +1506,7 @@
                   </zone>
                   <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
                     <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
-                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{33505285-5E9D-43FD-A9CF-637AAE407B91}&quot;' button-type='text'>
                         <button-visual-state>
                           <caption>Main</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
@@ -1137,7 +1526,7 @@
                     <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
                       <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
                         <button-visual-state>
-                          <caption>Company</caption>
+                          <caption>Companies</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
                           <format attr='background-color' value='#f9a655' />
                         </button-visual-state>
@@ -1151,10 +1540,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Models</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#ffbe7d' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1165,10 +1555,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Products</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#f1ce63' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1179,10 +1570,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Trends</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#d3b348' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1193,10 +1585,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Predictions</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#b6992d' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1236,7 +1629,7 @@
                   <zone h='68250' id='24' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='23875'>
                     <zone h='68250' id='18' param='vert' type-v2='layout-flow' w='44591' x='800' y='23875'>
                       <zone h='28875' id='26' name='Companies shares' w='44591' x='800' y='23875'>
-                        <layout-cache type-h='fixed' type-w='fixed' />
+                        <layout-cache fixed-size-h='223' type-h='fixed' type-w='fixed' />
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1245,7 +1638,7 @@
                         </zone-style>
                       </zone>
                       <zone h='39375' id='31' name='Company models' w='44591' x='800' y='52750'>
-                        <layout-cache minheight='203' type-h='scalable' type-w='fixed' />
+                        <layout-cache minheight='196' type-h='scalable' type-w='fixed' />
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1256,7 +1649,7 @@
                     </zone>
                     <zone h='68250' id='25' param='horz' type-v2='layout-flow' w='53809' x='45391' y='23875'>
                       <zone h='68250' id='19' name='Companies and devices counts from 1989 to 2013' w='53809' x='45391' y='23875'>
-                        <layout-cache cell-count-w='10' minheight='204' non-cell-size-w='119' type-h='scalable' type-w='cell' />
+                        <layout-cache cell-count-w='23' minheight='204' non-cell-size-w='119' type-h='scalable' type-w='cell' />
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1269,7 +1662,7 @@
                 </zone>
                 <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
@@ -1447,7 +1840,7 @@
                 </zone>
                 <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
@@ -1476,13 +1869,6 @@
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Main'>
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
-      <datasources>
-        <datasource caption='model' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' />
-      </datasources>
-      <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
-        <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
-        <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
-      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='98000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
@@ -1491,7 +1877,7 @@
                 <zone h='91125' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                   <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
                     <formatted-text>
-                      <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main</run>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main Dashboard</run>
                       <run fontalignment='1'>Æ&#10;</run>
                     </formatted-text>
                     <zone-style>
@@ -1504,7 +1890,7 @@
                   </zone>
                   <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
                     <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
-                      <button action='tabdoc:goto-sheet window-id=&quot;{C120DAC7-6A11-4D32-B921-5E875CB01997}&quot;' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{33505285-5E9D-43FD-A9CF-637AAE407B91}&quot;' button-type='text'>
                         <button-visual-state>
                           <caption>Main</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
@@ -1538,10 +1924,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Models</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#ffbe7d' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1552,10 +1939,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{070AD5D8-87F5-4912-B370-9CDCA80BE84E}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Products</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#f1ce63' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1566,10 +1954,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{FD7306A0-E9D8-4886-99FE-8756C6139CE9}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Trends</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#d3b348' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1580,10 +1969,11 @@
                       </zone-style>
                     </zone>
                     <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
-                      <button action='' button-type='text'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{4FD4FD2D-495E-4387-BB54-B27741501C37}&quot;' button-type='text'>
                         <button-visual-state>
+                          <caption>Predictions</caption>
                           <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                          <format attr='background-color' value='#333333' />
+                          <format attr='background-color' value='#b6992d' />
                         </button-visual-state>
                       </button>
                       <zone-style>
@@ -1594,61 +1984,10 @@
                       </zone-style>
                     </zone>
                   </zone>
-                  <zone h='8250' id='28' param='horz' type-v2='layout-flow' w='98400' x='800' y='15625'>
-                    <zone h='8250' id='27' name='Companies and devices counts from 1989 to 2013' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' type-v2='filter' values='database' w='45700' x='800' y='15625'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone fixed-size='519' h='8250' id='22' is-fixed='true' name='Companies and devices counts from 1989 to 2013' pane-specification-id='1' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]' type-v2='color' w='52700' x='46500' y='15625'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                  </zone>
-                  <zone h='68250' id='24' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='23875'>
-                    <zone h='68250' id='18' param='vert' type-v2='layout-flow' w='44591' x='800' y='23875'>
-                      <zone h='28875' id='26' name='Companies shares' w='44591' x='800' y='23875'>
-                        <layout-cache type-h='fixed' type-w='fixed' />
-                        <zone-style>
-                          <format attr='border-color' value='#000000' />
-                          <format attr='border-style' value='none' />
-                          <format attr='border-width' value='0' />
-                          <format attr='margin' value='4' />
-                        </zone-style>
-                      </zone>
-                      <zone h='39375' id='31' name='Company models' w='44591' x='800' y='52750'>
-                        <layout-cache minheight='203' type-h='scalable' type-w='fixed' />
-                        <zone-style>
-                          <format attr='border-color' value='#000000' />
-                          <format attr='border-style' value='none' />
-                          <format attr='border-width' value='0' />
-                          <format attr='margin' value='4' />
-                        </zone-style>
-                      </zone>
-                    </zone>
-                    <zone h='68250' id='25' param='horz' type-v2='layout-flow' w='53809' x='45391' y='23875'>
-                      <zone h='68250' id='19' name='Companies and devices counts from 1989 to 2013' w='53809' x='45391' y='23875'>
-                        <layout-cache cell-count-w='23' minheight='204' non-cell-size-w='119' type-h='scalable' type-w='cell' />
-                        <zone-style>
-                          <format attr='border-color' value='#000000' />
-                          <format attr='border-style' value='none' />
-                          <format attr='border-width' value='0' />
-                          <format attr='margin' value='4' />
-                        </zone-style>
-                      </zone>
-                    </zone>
-                  </zone>
                 </zone>
                 <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
@@ -1679,7 +2018,7 @@
               <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main Dashboard</run>
                     <run fontalignment='1'>Æ&#10;</run>
                   </formatted-text>
                   <zone-style>
@@ -1787,47 +2126,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='8250' id='27' name='Companies and devices counts from 1989 to 2013' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' type-v2='filter' values='database' w='45700' x='800' y='15625'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='68250' id='19' is-fixed='true' name='Companies and devices counts from 1989 to 2013' w='53809' x='45391' y='23875'>
-                  <layout-cache cell-count-w='23' minheight='204' non-cell-size-w='119' type-h='scalable' type-w='cell' />
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='519' h='8250' id='22' name='Companies and devices counts from 1989 to 2013' pane-specification-id='1' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[:Measure Names]' type-v2='color' w='52700' x='46500' y='15625'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='223' h='28875' id='26' is-fixed='true' name='Companies shares' w='44591' x='800' y='62750'>
-                  <layout-cache fixed-size-h='223' type-h='fixed' type-w='fixed' />
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
                 <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
@@ -1851,132 +2152,187 @@
           </zones>
         </devicelayout>
       </devicelayouts>
-      <simple-id uuid='{58175494-74E2-448A-99A5-6877A9691B44}' />
+      <simple-id uuid='{A0F83C1E-89C4-4DB2-BAE0-1BC6190236C6}' />
     </dashboard>
-    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Tamplete'>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Models'>
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='model' name='federated.19rmigs1k5a89c1de4hj51ie8cqo' />
+      </datasources>
+      <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
+        <column datatype='string' name='[Model]' role='dimension' type='nominal' />
+        <column-instance column='[Model]' derivation='None' name='[none:Model:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='89875' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
-            <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
-              <formatted-text>
-                <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main</run>
-              </formatted-text>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-                <format attr='background-color' value='#d55335' />
-              </zone-style>
+          <zone h='98000' id='33' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='17' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='98000' id='15' type-v2='layout-basic' w='98400' x='800' y='1000'>
+                  <zone h='91125' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                    <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                      <formatted-text>
+                        <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Model Analysis</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='background-color' value='#d55335' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
+                      <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{33505285-5E9D-43FD-A9CF-637AAE407B91}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Main</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#f28e2b' />
+                            <format attr='border-style' value='solid' />
+                            <format attr='border-width' value='1' />
+                            <format attr='border-color' value='#ffffff' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Company</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#f9a655' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='background-color' value='#000000' />
+                        </zone-style>
+                      </zone>
+                      <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Models</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#ffbe7d' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{070AD5D8-87F5-4912-B370-9CDCA80BE84E}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Products</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#f1ce63' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{FD7306A0-E9D8-4886-99FE-8756C6139CE9}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Trends</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#d3b348' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                        <button action='tabdoc:goto-sheet window-id=&quot;{4FD4FD2D-495E-4387-BB54-B27741501C37}&quot;' button-type='text'>
+                          <button-visual-state>
+                            <caption>Predictions</caption>
+                            <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                            <format attr='background-color' value='#b6992d' />
+                          </button-visual-state>
+                        </button>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone fixed-size='75' h='9375' id='36' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='15625'>
+                      <zone fixed-size='281' h='9375' id='35' is-fixed='true' mode='dropdown' name='Model info' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Model:nk]' type-v2='filter' values='database' w='28900' x='800' y='15625'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='117' h='9375' id='38' is-fixed='true' name='Model release year' w='12500' x='29700' y='15625'>
+                        <layout-cache fixed-size-h='49' type-h='fixed' type-w='fixed' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='170' h='9375' id='37' is-fixed='true' name='Model info' pane-specification-id='1' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' type-v2='color' w='17800' x='42200' y='15625'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone h='43250' id='31' name='Model info' w='98400' x='800' y='25000'>
+                      <layout-cache fixed-size-h='338' type-h='fixed' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                      <run fontalignment='1'>Æ&#10;</run>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='background-color' value='#d55335' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
             </zone>
-            <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
-              <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <caption>Main</caption>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#4e79a7' />
-                    <format attr='border-style' value='solid' />
-                    <format attr='border-width' value='1' />
-                    <format attr='border-color' value='#ffffff' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <caption>Company</caption>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#75a1c7' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                  <format attr='background-color' value='#000000' />
-                </zone-style>
-              </zone>
-              <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#333333' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#333333' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#333333' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
-                <button action='' button-type='text'>
-                  <button-visual-state>
-                    <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                    <format attr='background-color' value='#333333' />
-                  </button-visual-state>
-                </button>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-            </zone>
-          </zone>
-          <zone forceUpdate='true' h='8125' id='13' type-v2='text' w='98400' x='800' y='90875'>
-            <formatted-text>
-              <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
-              <run fontalignment='1'>Æ&#10;</run>
-              <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
-            </formatted-text>
-            <zone-style>
-              <format attr='border-color' value='#000000' />
-              <format attr='border-style' value='none' />
-              <format attr='border-width' value='0' />
-              <format attr='margin' value='4' />
-              <format attr='background-color' value='#d55335' />
-            </zone-style>
           </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -1988,13 +2344,13 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='14' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Main</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Model Analysis</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2006,11 +2362,11 @@
                   </zone-style>
                 </zone>
                 <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
-                  <button action='' button-type='text'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{C120DAC7-6A11-4D32-B921-5E875CB01997}&quot;' button-type='text'>
                     <button-visual-state>
                       <caption>Main</caption>
                       <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                      <format attr='background-color' value='#4e79a7' />
+                      <format attr='background-color' value='#f28e2b' />
                       <format attr='border-style' value='solid' />
                       <format attr='border-width' value='1' />
                       <format attr='border-color' value='#ffffff' />
@@ -2025,11 +2381,11 @@
                   </zone-style>
                 </zone>
                 <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
-                  <button action='' button-type='text'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
                     <button-visual-state>
                       <caption>Company</caption>
                       <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                      <format attr='background-color' value='#75a1c7' />
+                      <format attr='background-color' value='#f9a655' />
                     </button-visual-state>
                   </button>
                   <zone-style>
@@ -2101,9 +2457,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='8125' id='13' type-v2='text' w='98400' x='800' y='90875'>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Anayltics-University of Sydney</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
@@ -2127,10 +2483,868 @@
           </zones>
         </devicelayout>
       </devicelayouts>
-      <simple-id uuid='{9602F2D5-85F1-4272-A04C-2E364426D774}' />
+      <simple-id uuid='{E1DD77FE-8336-4021-B151-E19CA78751A2}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Predictions'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='17' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='15' type-v2='layout-basic' w='98400' x='800' y='1000'>
+                <zone h='91125' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                  <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='background-color' value='#d55335' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
+                    <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Main</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f28e2b' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='border-color' value='#ffffff' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Company</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f9a655' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='background-color' value='#000000' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{E4D38BF5-F671-45B0-B726-E9C19DF8A5CE}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Models</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#ffbe7d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Products</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f1ce63' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Trends</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#d3b348' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Predictions</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#b6992d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{C120DAC7-6A11-4D32-B921-5E875CB01997}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Main</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f28e2b' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='1' />
+                      <format attr='border-color' value='#ffffff' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Company</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f9a655' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{97BBD496-B6B0-4214-9FDA-C0CC6E07D639}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Products'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='17' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='15' type-v2='layout-basic' w='98400' x='800' y='1000'>
+                <zone h='91125' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                  <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='background-color' value='#d55335' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
+                    <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Main</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f28e2b' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='border-color' value='#ffffff' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Company</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f9a655' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='background-color' value='#000000' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{E4D38BF5-F671-45B0-B726-E9C19DF8A5CE}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Models</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#ffbe7d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Products</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f1ce63' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Trends</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#d3b348' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Predictions</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#b6992d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{C120DAC7-6A11-4D32-B921-5E875CB01997}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Main</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f28e2b' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='1' />
+                      <format attr='border-color' value='#ffffff' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Company</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f9a655' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5E040AC4-23C2-4EAB-B09D-24EDE0474B2A}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Trends'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='17' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='15' type-v2='layout-basic' w='98400' x='800' y='1000'>
+                <zone h='91125' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                  <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='background-color' value='#d55335' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
+                    <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Main</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f28e2b' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='border-color' value='#ffffff' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Company</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f9a655' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='background-color' value='#000000' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{E4D38BF5-F671-45B0-B726-E9C19DF8A5CE}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Models</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#ffbe7d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Products</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#f1ce63' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Trends</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#d3b348' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                      <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                        <button-visual-state>
+                          <caption>Predictions</caption>
+                          <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                          <format attr='background-color' value='#b6992d' />
+                        </button-visual-state>
+                      </button>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='5750' id='5' type-v2='text' w='98400' x='800' y='1000'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='20'>Company Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{C120DAC7-6A11-4D32-B921-5E875CB01997}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Main</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f28e2b' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='1' />
+                      <format attr='border-color' value='#ffffff' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Company</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#f9a655' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='6875' id='13' type-v2='text' w='98400' x='800' y='92125'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d55335' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{BFED61C4-A234-4122-A7C4-50590B6CBF55}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows source-height='51'>
     <window class='worksheet' name='Companies and devices counts from 1989 to 2013'>
       <cards>
         <edge name='left'>
@@ -2238,25 +3452,64 @@
       </cards>
       <simple-id uuid='{2D2BCCD0-02C5-43F1-A686-52FF4C85D38A}' />
     </window>
-    <window class='dashboard' name='Tamplete'>
-      <viewpoints />
-      <active id='3' />
-      <simple-id uuid='{E4D38BF5-F671-45B0-B726-E9C19DF8A5CE}' />
+    <window class='worksheet' maximized='true' name='Model info'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Company_real:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{39232098-69FC-41B7-8CBE-B3F2FC13B4B6}' />
+    </window>
+    <window class='worksheet' name='Model release year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{597C402B-C06F-46AD-AF56-F51FAD41883D}' />
     </window>
     <window class='dashboard' name='Main'>
-      <viewpoints>
-        <viewpoint name='Companies and devices counts from 1989 to 2013'>
-          <zoom type='entire-view' />
-        </viewpoint>
-        <viewpoint name='Companies shares' />
-        <viewpoint name='Company models'>
-          <zoom type='entire-view' />
-        </viewpoint>
-      </viewpoints>
-      <active id='6' />
-      <simple-id uuid='{782F6375-BF56-47AD-90A6-4D57CA147B49}' />
+      <viewpoints />
+      <active id='8' />
+      <simple-id uuid='{33505285-5E9D-43FD-A9CF-637AAE407B91}' />
     </window>
-    <window class='dashboard' maximized='true' name='Company Analysis'>
+    <window class='dashboard' name='Companies'>
       <viewpoints>
         <viewpoint name='Companies and devices counts from 1989 to 2013'>
           <zoom type='entire-view' />
@@ -2266,8 +3519,31 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='26' />
+      <active id='13' />
       <simple-id uuid='{597F7996-B924-4ADE-9EA2-41D977BE7692}' />
+    </window>
+    <window class='dashboard' name='Models'>
+      <viewpoints>
+        <viewpoint name='Model info' />
+        <viewpoint name='Model release year' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}' />
+    </window>
+    <window class='dashboard' name='Products'>
+      <viewpoints />
+      <active id='10' />
+      <simple-id uuid='{070AD5D8-87F5-4912-B370-9CDCA80BE84E}' />
+    </window>
+    <window class='dashboard' name='Trends'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{FD7306A0-E9D8-4886-99FE-8756C6139CE9}' />
+    </window>
+    <window class='dashboard' name='Predictions'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{4FD4FD2D-495E-4387-BB54-B27741501C37}' />
     </window>
   </windows>
 </workbook>
