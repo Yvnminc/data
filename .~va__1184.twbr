@@ -1991,8 +1991,8 @@
             <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
-            <min>2005.21</min>
-            <max>2008.3199999999999</max>
+            <min>1989.0</min>
+            <max>2012.916667</max>
           </filter>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
@@ -3130,8 +3130,8 @@
             <column-instance column='[Release Date]' derivation='Year-Trunc' name='[tyr:Release Date:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
-            <min>2005.21</min>
-            <max>2008.3199999999999</max>
+            <min>1989.0</min>
+            <max>2012.916667</max>
           </filter>
           <manual-sort column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[tyr:Release Date:ok]' direction='ASC'>
             <dictionary>
@@ -3225,8 +3225,8 @@
             </column-instance>
           </datasource-dependencies>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
-            <min>2005.21</min>
-            <max>2008.3199999999999</max>
+            <min>1989.0</min>
+            <max>2012.916667</max>
           </filter>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
@@ -3235,8 +3235,8 @@
         </view>
         <style>
           <style-rule element='cell'>
-            <format attr='height' value='184' />
-            <format attr='width' value='253' />
+            <format attr='height' value='158' />
+            <format attr='width' value='233' />
           </style-rule>
         </style>
         <panes>
@@ -5949,11 +5949,11 @@
                             </zone>
                             <zone fixed-size='71' h='8875' id='7' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='6750'>
                               <zone h='8875' id='6' type-v2='dashboard-object' w='16400' x='800' y='6750'>
-                                <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                                <button action='tabdoc:goto-sheet window-id=&quot;{33505285-5E9D-43FD-A9CF-637AAE407B91}&quot;' button-type='text'>
                                   <button-visual-state>
                                     <caption>Main</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#f28e2b' />
+                                    <format attr='background-color' value='#dd7160' />
                                     <format attr='border-style' value='solid' />
                                     <format attr='border-width' value='1' />
                                     <format attr='border-color' value='#ffffff' />
@@ -5969,9 +5969,9 @@
                               <zone h='8875' id='8' type-v2='dashboard-object' w='16400' x='17200' y='6750'>
                                 <button action='tabdoc:goto-sheet window-id=&quot;{597F7996-B924-4ADE-9EA2-41D977BE7692}&quot;' button-type='text'>
                                   <button-visual-state>
-                                    <caption>Company</caption>
+                                    <caption>Companies</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#f9a655' />
+                                    <format attr='background-color' value='#dd7160' />
                                   </button-visual-state>
                                 </button>
                                 <zone-style>
@@ -5983,11 +5983,11 @@
                                 </zone-style>
                               </zone>
                               <zone h='8875' id='9' type-v2='dashboard-object' w='16400' x='33600' y='6750'>
-                                <button action='tabdoc:goto-sheet window-id=&quot;{E4D38BF5-F671-45B0-B726-E9C19DF8A5CE}&quot;' button-type='text'>
+                                <button action='tabdoc:goto-sheet window-id=&quot;{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}&quot;' button-type='text'>
                                   <button-visual-state>
                                     <caption>Models</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#ffbe7d' />
+                                    <format attr='background-color' value='#dd7160' />
                                   </button-visual-state>
                                 </button>
                                 <zone-style>
@@ -5998,11 +5998,11 @@
                                 </zone-style>
                               </zone>
                               <zone h='8875' id='10' type-v2='dashboard-object' w='16400' x='50000' y='6750'>
-                                <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                                <button action='tabdoc:goto-sheet window-id=&quot;{070AD5D8-87F5-4912-B370-9CDCA80BE84E}&quot;' button-type='text'>
                                   <button-visual-state>
-                                    <caption>Products</caption>
+                                    <caption>Features</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#f1ce63' />
+                                    <format attr='background-color' value='#dd7160' />
                                   </button-visual-state>
                                 </button>
                                 <zone-style>
@@ -6013,11 +6013,11 @@
                                 </zone-style>
                               </zone>
                               <zone h='8875' id='11' type-v2='dashboard-object' w='16400' x='66400' y='6750'>
-                                <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                                <button action='tabdoc:goto-sheet window-id=&quot;{FD7306A0-E9D8-4886-99FE-8756C6139CE9}&quot;' button-type='text'>
                                   <button-visual-state>
-                                    <caption>Trends</caption>
+                                    <caption>Types</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#d3b348' />
+                                    <format attr='background-color' value='#dd7160' />
                                   </button-visual-state>
                                 </button>
                                 <zone-style>
@@ -6028,11 +6028,11 @@
                                 </zone-style>
                               </zone>
                               <zone h='8875' id='12' type-v2='dashboard-object' w='16400' x='82800' y='6750'>
-                                <button action='tabdoc:goto-sheet window-id=&quot;{782F6375-BF56-47AD-90A6-4D57CA147B49}&quot;' button-type='text'>
+                                <button action='tabdoc:goto-sheet window-id=&quot;{4FD4FD2D-495E-4387-BB54-B27741501C37}&quot;' button-type='text'>
                                   <button-visual-state>
                                     <caption>Predictions</caption>
                                     <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                                    <format attr='background-color' value='#b6992d' />
+                                    <format attr='background-color' value='#d55335' />
                                   </button-visual-state>
                                 </button>
                                 <zone-style>
@@ -6043,53 +6043,61 @@
                                 </zone-style>
                               </zone>
                             </zone>
-                            <zone fixed-size='90' h='11250' id='67' is-fixed='true' param='horz' type-v2='layout-flow' w='98400' x='800' y='15625'>
-                              <zone h='11250' id='62' name='Network' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' type-v2='filter' values='database' w='24200' x='800' y='15625'>
-                                <zone-style>
-                                  <format attr='border-color' value='#000000' />
-                                  <format attr='border-style' value='none' />
-                                  <format attr='border-width' value='0' />
-                                  <format attr='margin' value='4' />
-                                </zone-style>
+                            <zone fixed-size='90' h='11250' id='72' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='15625'>
+                              <zone h='11250' id='67' param='horz' type-v2='layout-flow' w='24200' x='800' y='15625'>
+                                <zone h='11250' id='62' name='Network' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' type-v2='filter' values='database' w='24200' x='800' y='15625'>
+                                  <zone-style>
+                                    <format attr='border-color' value='#000000' />
+                                    <format attr='border-style' value='none' />
+                                    <format attr='border-width' value='0' />
+                                    <format attr='margin' value='4' />
+                                  </zone-style>
+                                </zone>
                               </zone>
-                              <zone fixed-size='734' h='11250' id='61' is-fixed='true' name='Network' pane-specification-id='0' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Length Width Bin1 &amp; Performance Bin1 (Combined)]' type-v2='color' w='74200' x='25000' y='15625'>
-                                <zone-style>
-                                  <format attr='border-color' value='#000000' />
-                                  <format attr='border-style' value='none' />
-                                  <format attr='border-width' value='0' />
-                                  <format attr='margin' value='4' />
-                                </zone-style>
+                              <zone h='11250' id='73' param='horz' type-v2='layout-flow' w='74200' x='25000' y='15625'>
+                                <zone fixed-size='719' h='11250' id='61' is-fixed='true' name='Network' pane-specification-id='0' param='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Length Width Bin1 &amp; Performance Bin1 (Combined)]' type-v2='color' w='74200' x='25000' y='15625'>
+                                  <zone-style>
+                                    <format attr='border-color' value='#000000' />
+                                    <format attr='border-style' value='none' />
+                                    <format attr='border-width' value='0' />
+                                    <format attr='margin' value='4' />
+                                  </zone-style>
+                                </zone>
                               </zone>
                             </zone>
-                            <zone h='65250' id='65' param='horz' type-v2='layout-flow' w='98400' x='800' y='26875'>
-                              <zone h='65250' id='68' param='vert' type-v2='layout-flow' w='29100' x='800' y='26875'>
-                                <zone fixed-size='298' h='38250' id='58' is-fixed='true' name='Network' w='29100' x='800' y='26875'>
-                                  <layout-cache fixed-size-w='283' type-h='fixed' type-w='fixed' />
-                                  <zone-style>
-                                    <format attr='border-color' value='#000000' />
-                                    <format attr='border-style' value='none' />
-                                    <format attr='border-width' value='0' />
-                                    <format attr='margin' value='4' />
-                                  </zone-style>
-                                </zone>
-                                <zone h='25875' id='69' name='Percentage' w='29100' x='800' y='65125'>
-                                  <layout-cache fixed-size-h='199' fixed-size-w='253' type-h='fixed' type-w='fixed' />
-                                  <zone-style>
-                                    <format attr='border-color' value='#000000' />
-                                    <format attr='border-style' value='none' />
-                                    <format attr='border-width' value='0' />
-                                    <format attr='margin' value='4' />
-                                  </zone-style>
+                            <zone h='65250' id='70' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='26875'>
+                              <zone h='65250' id='65' param='horz' type-v2='layout-flow' w='24200' x='800' y='26875'>
+                                <zone h='65250' id='68' param='vert' type-v2='layout-flow' w='24200' x='800' y='26875'>
+                                  <zone fixed-size='298' h='38250' id='58' is-fixed='true' name='Network' w='24200' x='800' y='26875'>
+                                    <layout-cache fixed-size-w='234' type-h='fixed' type-w='fixed' />
+                                    <zone-style>
+                                      <format attr='border-color' value='#000000' />
+                                      <format attr='border-style' value='none' />
+                                      <format attr='border-width' value='0' />
+                                      <format attr='margin' value='4' />
+                                    </zone-style>
+                                  </zone>
+                                  <zone h='27000' id='69' name='Percentage' w='24200' x='800' y='65125'>
+                                    <layout-cache fixed-size-w='253' type-h='fixed' type-w='fixed' />
+                                    <zone-style>
+                                      <format attr='border-color' value='#000000' />
+                                      <format attr='border-style' value='none' />
+                                      <format attr='border-width' value='0' />
+                                      <format attr='margin' value='4' />
+                                    </zone-style>
+                                  </zone>
                                 </zone>
                               </zone>
-                              <zone h='65250' id='66' name='Bar predict' w='69300' x='29900' y='26875'>
-                                <layout-cache minheight='198' minwidth='145' type-h='scalable' type-w='scalable' />
-                                <zone-style>
-                                  <format attr='border-color' value='#000000' />
-                                  <format attr='border-style' value='none' />
-                                  <format attr='border-width' value='0' />
-                                  <format attr='margin' value='4' />
-                                </zone-style>
+                              <zone h='65250' id='71' param='horz' type-v2='layout-flow' w='74200' x='25000' y='26875'>
+                                <zone h='65250' id='66' name='Bar predict' w='74200' x='25000' y='26875'>
+                                  <layout-cache minheight='198' minwidth='152' type-h='scalable' type-w='scalable' />
+                                  <zone-style>
+                                    <format attr='border-color' value='#000000' />
+                                    <format attr='border-style' value='none' />
+                                    <format attr='border-width' value='0' />
+                                    <format attr='margin' value='4' />
+                                  </zone-style>
+                                </zone>
                               </zone>
                             </zone>
                           </zone>
@@ -7481,7 +7489,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='9' />
+      <active id='11' />
       <simple-id uuid='{070AD5D8-87F5-4912-B370-9CDCA80BE84E}' />
     </window>
     <window class='dashboard' name='Types'>
@@ -7497,7 +7505,7 @@
         </viewpoint>
         <viewpoint name='Performance vs legnth ratio' />
       </viewpoints>
-      <active id='-1' />
+      <active id='12' />
       <simple-id uuid='{FD7306A0-E9D8-4886-99FE-8756C6139CE9}' />
     </window>
     <window class='dashboard' maximized='true' name='Predictions'>
@@ -7508,7 +7516,7 @@
         <viewpoint name='Network' />
         <viewpoint name='Percentage' />
       </viewpoints>
-      <active id='62' />
+      <active id='69' />
       <simple-id uuid='{4FD4FD2D-495E-4387-BB54-B27741501C37}' />
     </window>
     <window class='worksheet' name='Sheet 16'>
