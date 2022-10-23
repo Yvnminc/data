@@ -39,8 +39,8 @@
         <calculation class='tableau' formula='1.0' />
         <range granularity='1.0' max='10.0' min='1.0' />
       </column>
-      <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-        <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+      <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+        <calculation class='tableau' formula='&quot;Performance&quot;' />
         <members>
           <member value='&quot;Performance&quot;' />
           <member value='&quot;Portabilities&quot;' />
@@ -651,6 +651,7 @@
       <column-instance column='[Performance Bin]' derivation='None' name='[none:Performance Bin:nk]' pivot='key' type='nominal' />
       <column-instance column='[RAM Capacity (Mb) (bin) 2]' derivation='None' name='[none:RAM Capacity (Mb) (bin) 2:ok]' pivot='key' type='ordinal' />
       <column-instance column='[RAM Capacity (Mb) (bin)]' derivation='None' name='[none:RAM Capacity (Mb) (bin):ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:ok]' pivot='key' type='ordinal' />
       <column-instance column='[Volume (cubic cm) (bin) 2]' derivation='None' name='[none:Volume (cubic cm) (bin) 2:ok]' pivot='key' type='ordinal' />
       <column-instance column='[CPU Clock (MHz)]' derivation='Count' name='[pcto:cnt:CPU Clock (MHz):qk]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Rows' type='PctTotal' />
@@ -704,6 +705,11 @@
       <group caption='Action (Performance Bin1)' hidden='true' name='[Action (Performance Bin1)]' name-style='unqualified' user:auto-column='sheet_link'>
         <groupfilter function='crossjoin'>
           <groupfilter function='level-members' level='[Performance Bin]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Release Year)' hidden='true' name='[Action (Release Year)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Release Year:ok]' />
         </groupfilter>
       </group>
       <group caption='Action (YEAR(Release Date))' hidden='true' name='[Action (YEAR(Release Date))]' name-style='unqualified' user:auto-column='sheet_link'>
@@ -1614,8 +1620,8 @@
         </manual-sort>
       </default-sorts>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-          <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+        <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+          <calculation class='tableau' formula='&quot;Performance&quot;' />
         </column>
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -1702,6 +1708,30 @@
         <param name='target' value='Types' />
       </command>
     </action>
+    <action caption='Filter 3 (generated)' name='[Action5_EE96B31B6F26474185086BB0DA8C854F]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Predictions' type='sheet' worksheet='Percentage' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Predictions' />
+      </command>
+    </action>
+    <action caption='Filter 4 (generated)' name='[Action6_5540EA95E50F441992356F45715833A5]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Predictions' type='sheet' worksheet='Network' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Predictions' />
+      </command>
+    </action>
+    <action caption='Filter 5 (generated)' name='[Action7_F23050969E404D90A1E5E684C3557D3C]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Predictions' type='sheet' worksheet='Bar predict' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Predictions' />
+      </command>
+    </action>
   </actions>
   <worksheets>
     <worksheet name='Appearance trend'>
@@ -1717,8 +1747,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-              <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+              <calculation class='tableau' formula='&quot;Performance&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
@@ -1986,16 +2016,22 @@
             <column caption='Length Width Bin1' datatype='string' name='[Length Width Bin]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Model ID]' role='dimension' type='ordinal' />
             <column caption='Performance Bin1' datatype='string' name='[Performance Bin]' role='dimension' type='nominal' />
+            <column datatype='date' name='[Release Date]' role='dimension' type='ordinal' />
             <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
             <column-instance column='[Model ID]' derivation='Count' name='[cnt:Model ID:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Release Date]' derivation='Year-Trunc' name='[tyr:Release Date:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (YEAR(Release Date))]'>
+            <groupfilter function='level-members' level='[tyr:Release Date:ok]' user:ui-action-filter='[Action6_5540EA95E50F441992356F45715833A5]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
             <min>1989.0</min>
             <max>2012.916667</max>
           </filter>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (YEAR(Release Date))]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -3126,9 +3162,13 @@
             <column datatype='date' name='[Release Date]' role='dimension' type='ordinal' />
             <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
             <column-instance column='[Model]' derivation='Count' name='[cnt:Model:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:ok]' pivot='key' type='ordinal' />
             <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Release Date]' derivation='Year-Trunc' name='[tyr:Release Date:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Release Year)]'>
+            <groupfilter function='level-members' level='[none:Release Year:ok]' user:ui-action-filter='[Action7_F23050969E404D90A1E5E684C3557D3C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
             <min>1989.0</min>
             <max>2012.916667</max>
@@ -3163,6 +3203,7 @@
           </manual-sort>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Release Year)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -3217,19 +3258,30 @@
             <column caption='Length Width Bin1' datatype='string' name='[Length Width Bin]' role='dimension' type='nominal' />
             <column datatype='string' name='[Model]' role='dimension' type='nominal' />
             <column caption='Performance Bin1' datatype='string' name='[Performance Bin]' role='dimension' type='nominal' />
+            <column datatype='date' name='[Release Date]' role='dimension' type='ordinal' />
             <column datatype='real' name='[Release Year]' role='dimension' type='quantitative' />
             <column-instance column='[Model]' derivation='Count' name='[cnt:Model:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:ok]' pivot='key' type='ordinal' />
             <column-instance column='[Release Year]' derivation='None' name='[none:Release Year:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Model]' derivation='Count' name='[pcto:cnt:Model:qk]' pivot='key' type='quantitative'>
               <table-calc ordering-type='Rows' type='PctTotal' />
             </column-instance>
+            <column-instance column='[Release Date]' derivation='Year-Trunc' name='[tyr:Release Date:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Release Year)]'>
+            <groupfilter function='level-members' level='[none:Release Year:ok]' user:ui-action-filter='[Action7_F23050969E404D90A1E5E684C3557D3C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (YEAR(Release Date))]'>
+            <groupfilter function='level-members' level='[tyr:Release Date:ok]' user:ui-action-filter='[Action6_5540EA95E50F441992356F45715833A5]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='quantitative' column='[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]' filter-group='7' included-values='in-range'>
             <min>1989.0</min>
             <max>2012.916667</max>
           </filter>
           <slices>
             <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[none:Release Year:qk]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (YEAR(Release Date))]</column>
+            <column>[federated.19rmigs1k5a89c1de4hj51ie8cqo].[Action (Release Year)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -3343,8 +3395,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-              <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+              <calculation class='tableau' formula='&quot;Performance&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
@@ -3594,8 +3646,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-              <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+            <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+              <calculation class='tableau' formula='&quot;Performance&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.19rmigs1k5a89c1de4hj51ie8cqo'>
@@ -4596,7 +4648,7 @@
                 <formatted-text>
                   <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                   <run fontalignment='1'>Æ&#10;</run>
-                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                 </formatted-text>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -4797,7 +4849,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -4828,8 +4880,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Portabilities&quot;'>
-          <calculation class='tableau' formula='&quot;Portabilities&quot;' />
+        <column caption='Select view' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Performance&quot;'>
+          <calculation class='tableau' formula='&quot;Performance&quot;' />
           <members>
             <member value='&quot;Performance&quot;' />
             <member value='&quot;Portabilities&quot;' />
@@ -4974,8 +5026,8 @@
                                 <format attr='margin' value='4' />
                               </zone-style>
                             </zone>
-                            <zone h='3000' id='87' name='Performance trend' w='98400' x='800' y='25125'>
-                              <layout-cache has-max-size-h='true' maxheight='24' minheight='24' type-h='scalable' type-w='fixed' />
+                            <zone h='64000' id='87' name='Performance trend' w='98400' x='800' y='25125'>
+                              <layout-cache has-max-size-h='true' maxheight='839' minheight='839' type-h='scalable' type-w='fixed' />
                               <zone-style>
                                 <format attr='border-color' value='#000000' />
                                 <format attr='border-style' value='none' />
@@ -4983,8 +5035,8 @@
                                 <format attr='margin' value='4' />
                               </zone-style>
                             </zone>
-                            <zone h='64000' id='86' name='Portabilities trend' w='98400' x='800' y='28125'>
-                              <layout-cache has-max-size-h='true' maxheight='653' minheight='653' type-h='scalable' type-w='fixed' />
+                            <zone h='3000' id='86' name='Portabilities trend' w='98400' x='800' y='89125'>
+                              <layout-cache has-max-size-h='true' maxheight='24' minheight='24' type-h='scalable' type-w='fixed' />
                               <zone-style>
                                 <format attr='border-color' value='#000000' />
                                 <format attr='border-style' value='none' />
@@ -4999,7 +5051,7 @@
                         <formatted-text>
                           <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                           <run fontalignment='1'>Æ&#10;</run>
-                          <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                          <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                         </formatted-text>
                         <zone-style>
                           <format attr='border-color' value='#000000' />
@@ -5185,7 +5237,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -5339,7 +5391,7 @@
                 <formatted-text>
                   <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                   <run fontalignment='1'>Æ&#10;</run>
-                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                 </formatted-text>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -5492,7 +5544,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -5686,7 +5738,7 @@
                 <formatted-text>
                   <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                   <run fontalignment='1'>Æ&#10;</run>
-                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                  <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                 </formatted-text>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -5890,7 +5942,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -6068,7 +6120,7 @@
                             <zone h='65250' id='70' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='26875'>
                               <zone h='65250' id='65' param='horz' type-v2='layout-flow' w='24200' x='800' y='26875'>
                                 <zone h='65250' id='68' param='vert' type-v2='layout-flow' w='24200' x='800' y='26875'>
-                                  <zone fixed-size='298' h='38250' id='58' is-fixed='true' name='Network' w='24200' x='800' y='26875'>
+                                  <zone fixed-size='393' h='40000' id='58' is-fixed='true' name='Network' w='24200' x='800' y='26875'>
                                     <layout-cache fixed-size-w='234' type-h='fixed' type-w='fixed' />
                                     <zone-style>
                                       <format attr='border-color' value='#000000' />
@@ -6077,8 +6129,8 @@
                                       <format attr='margin' value='4' />
                                     </zone-style>
                                   </zone>
-                                  <zone h='27000' id='69' name='Percentage' w='24200' x='800' y='65125'>
-                                    <layout-cache fixed-size-w='253' type-h='fixed' type-w='fixed' />
+                                  <zone fixed-size='194' h='25250' id='69' is-fixed='true' name='Percentage' w='24200' x='800' y='66875'>
+                                    <layout-cache fixed-size-w='233' type-h='fixed' type-w='fixed' />
                                     <zone-style>
                                       <format attr='border-color' value='#000000' />
                                       <format attr='border-style' value='none' />
@@ -6105,7 +6157,7 @@
                             <formatted-text>
                               <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                               <run fontalignment='1'>Æ&#10;</run>
-                              <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                              <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                             </formatted-text>
                             <zone-style>
                               <format attr='border-color' value='#000000' />
@@ -6254,7 +6306,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -6456,7 +6508,7 @@
                                           <formatted-text>
                                             <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                                             <run fontalignment='1'>Æ&#10;</run>
-                                            <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                                            <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                                           </formatted-text>
                                           <zone-style>
                                             <format attr='border-color' value='#000000' />
@@ -6682,7 +6734,7 @@
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>COMP5048-Visual Analytics-University of Sydney</run>
                     <run fontalignment='1'>Æ&#10;</run>
-                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiachen Zhang/ Mengchen Ye/ Mike Mao</run>
+                    <run fontalignment='1' fontcolor='#ffffff' fontsize='11'>RE-13 Created  By: Yanming Guo/ Jiacheng Zhang/ Mengchen Ye/ Mike Mao</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -6707,7 +6759,7 @@
       <simple-id uuid='{BFED61C4-A234-4122-A7C4-50590B6CBF55}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows pres-mode='true' source-height='30'>
     <window class='worksheet' name='Companies and devices counts from 1989 to 2013'>
       <cards>
         <edge name='left'>
@@ -7452,7 +7504,7 @@
     </window>
     <window class='dashboard' name='Main'>
       <viewpoints />
-      <active id='11' />
+      <active id='8' />
       <simple-id uuid='{33505285-5E9D-43FD-A9CF-637AAE407B91}' />
     </window>
     <window class='dashboard' name='Companies'>
@@ -7465,7 +7517,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='6' />
+      <active id='9' />
       <simple-id uuid='{597F7996-B924-4ADE-9EA2-41D977BE7692}' />
     </window>
     <window class='dashboard' name='Models'>
@@ -7474,7 +7526,7 @@
         <viewpoint name='Model info' />
         <viewpoint name='Model release year' />
       </viewpoints>
-      <active id='38' />
+      <active id='10' />
       <simple-id uuid='{6BC33AE2-7091-4AE2-B0A8-C05A8F9A449D}' />
     </window>
     <window class='dashboard' name='Features'>
@@ -7516,7 +7568,7 @@
         <viewpoint name='Network' />
         <viewpoint name='Percentage' />
       </viewpoints>
-      <active id='69' />
+      <active id='61' />
       <simple-id uuid='{4FD4FD2D-495E-4387-BB54-B27741501C37}' />
     </window>
     <window class='worksheet' name='Sheet 16'>
